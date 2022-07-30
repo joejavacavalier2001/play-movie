@@ -9,7 +9,7 @@ const PickYouTubeVideo = ({access_token = "",onChosenId = () => {}, unSeenMovies
 		while ((!currentElem.dataset.movieindex) && (currentElem != document))
 			currentElem = currentElem.parentElement;
 		if (currentElem.dataset.movieindex)
-			onChosenId(currentElem.dataset.movieindex);
+			onChosenId(parseInt(currentElem.dataset.movieindex));
 	},[onChosenId]);
 
 	//const windowwidth = useMemo(() => window.innerWidth);
@@ -22,9 +22,9 @@ const PickYouTubeVideo = ({access_token = "",onChosenId = () => {}, unSeenMovies
 				<div className={(imgClass == "high") ? "h3" : "h6"}>window innerWidth is {windowwidth}</div>
 			</Col></Row>*/}
 			<For each="movie" index="idx" of={unSeenMovies}>
-				<Row data-movieindex={movie.index} onClick={handleClick} key={`movierow${idx}`}>
+				<Row key={`movierow${idx}`}>
 					<Col xs={'auto'} md={'auto'}>
-						<img className={imgClass} src={movie.thumbnail} alt={movie.title} title={movie.title}/>
+						<img className={imgClass} data-movieindex={movie.movieindex} onClick={handleClick} src={movie.thumbnail} alt={movie.title} title={movie.title}/>
 					</Col>
 					{/*
 					<Col xs={5} md={5} style={{display: "flex", alignItems: "center", backgroundColor: "lightblue"}}>
