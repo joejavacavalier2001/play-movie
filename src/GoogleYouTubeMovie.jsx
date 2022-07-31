@@ -40,7 +40,7 @@ const GoogleYouTubeMovie = ({queryStringFromForm = "", goBack = () => {}}) => {
 		if (!movieList.length){
 			axios("https://www.googleapis.com/youtube/v3/search",{
 				params: {
-					key: "AIzaSyCi8fU5mnu_jalJ4XqZhdUVbyVrdri1sDc",
+					key: "<make your own app key from the Google Developer Console>",
 					part: "id,snippet",
 					q: queryString, 
 					maxResults: 6
