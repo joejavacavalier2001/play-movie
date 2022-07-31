@@ -75,9 +75,9 @@ config = {
         '.rktlebnhwebworks.net'
     ],
     https: {
-      key: ["/etc/pki/tls/private/rktlebnhwebworks_net.key"],
-      ca: "/etc/pki/tls/private/rktlebnhwebworks.net.ca-bundle", 
-      cert: "/etc/pki/tls/private/rktlebnhwebworks.net.crt"
+      key: ["<path to server TLS/SSL key>"],
+      ca: "<path to server TLS/SSL bundle>", 
+      cert: "<path to server TLS/SSL cert file>"
     },
     headers: { 
       'Cache-Control': 'max-age=0'
